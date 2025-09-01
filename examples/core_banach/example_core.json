@@ -5,5 +5,5 @@
   "delta_tau_min": 0.0047,
   "c_P": 1.0,
   "verification_type": "core_banach",
-  "core_params": { "gamma": 0.6, "t": 0.1 }
+  "core_params": { "gamma": 0.60, "t": 0.10 }
 }

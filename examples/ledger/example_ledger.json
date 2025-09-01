@@ -6,8 +6,8 @@
   "c_P": 1.0,
   "verification_type": "ledger",
   "steps": [
-    { "gamma": 0.993, "t": 0.01,  "delta_tau": 0.0050 },
-    { "gamma": 0.992, "t": 0.015, "delta_tau": 0.0048 },
-    { "gamma": 0.994, "t": 0.012, "delta_tau": 0.0052 }
+    { "gamma": 0.70, "t": 0.08, "delta_tau": 0.0050 },
+    { "gamma": 0.68, "t": 0.06, "delta_tau": 0.0052 },
+    { "gamma": 0.66, "t": 0.07, "delta_tau": 0.0049 }
   ]
 }
