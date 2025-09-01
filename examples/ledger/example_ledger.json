@@ -1,0 +1,13 @@
+{
+  "alpha": 0.9982,
+  "beta": 0.0021,
+  "sigma": 0.12,
+  "delta_tau_min": 0.0047,
+  "c_P": 1.0,
+  "verification_type": "ledger",
+  "steps": [
+    { "gamma": 0.993, "t": 0.01,  "delta_tau": 0.0050 },
+    { "gamma": 0.992, "t": 0.015, "delta_tau": 0.0048 },
+    { "gamma": 0.994, "t": 0.012, "delta_tau": 0.0052 }
+  ]
+}

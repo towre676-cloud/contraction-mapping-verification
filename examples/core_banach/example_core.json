@@ -1,0 +1,9 @@
+{
+  "alpha": 0.9982,
+  "beta": 0.0021,
+  "sigma": 0.12,
+  "delta_tau_min": 0.0047,
+  "c_P": 1.0,
+  "verification_type": "core_banach",
+  "core_params": { "gamma": 0.6, "t": 0.1 }
+}
