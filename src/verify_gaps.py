@@ -138,7 +138,7 @@ def main():
     cP  = float(data.get("c_P", args.cP))
     sigma = float(data.get("sigma", 1.0))
 
-    print(f"ε = {eps:.6g}   c_P = {cP}   type = {args.type}")
+    print(f"eps = {eps:.6g}   c_P = {cP}   type = {args.type}")
 
     if args.type == "core_banach":
         ok, gap = core_banach_ok(data, eps, cP, args.interval, args.verified)
@@ -152,7 +152,7 @@ def main():
 
     if args.type == "coupled_stream":
         ok, eps_eff = coupled_ok(data)
-        print(f"Coupled streams: {'OK' if ok else 'FAIL'} (ε_eff = {eps_eff:.6g})")
+        print(f"Coupled streams: {'OK' if ok else 'FAIL'} (eps_eff = {eps_eff:.6g})")
         return 0 if ok else 1
 
     print("unknown type")
