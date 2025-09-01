@@ -1,0 +1,43 @@
+--- a/src/verify_gaps.py
++++ b/src/verify_gaps.py
+@@
+ def verify_core_banach_condition(gamma: float, t: float, c_P: float, epsilon: float) -> bool:
+-    """
+-    Verify: γ(1 + t·c_P) ≤ 1 - ε
+-    """
+-    lhs = gamma * (1 + t * c_P)
+-    rhs = 1 - epsilon
+-    return lhs <= rhs
++    """
++    Verify (direct-threshold form): γ(1 + t·c_P) ≤ ε
++    where ε := α^β · exp(-σ·Δτ_min).
++    """
++    lhs = gamma * (1 + t * c_P)
++    rhs = epsilon
++    return lhs <= rhs
+ 
+ 
+ def verify_ledger_condition(gamma_k: float, t_k: float, c_P: float, 
+                            sigma: float, delta_tau_k: float, epsilon: float) -> bool:
+-    """
+-    Verify: γ_k(1 + t_k·c_P)·exp(-σ·Δτ_k) ≤ 1 - ε
+-    """
+-    lhs = gamma_k * (1 + t_k * c_P) * math.exp(-sigma * delta_tau_k)
+-    rhs = 1 - epsilon
+-    return lhs <= rhs
++    """
++    Verify (direct-threshold form): γ_k(1 + t_k·c_P)·exp(-σ·Δτ_k) ≤ ε
++    with ε := α^β · exp(-σ·Δτ_min).
++    """
++    lhs = gamma_k * (1 + t_k * c_P) * math.exp(-sigma * delta_tau_k)
++    rhs = epsilon
++    return lhs <= rhs
+@@
+-        print(f"Computed ε = α^β · exp(-σ·Δτ_min) = {alpha}^{beta} · exp(-{sigma}·{delta_tau_min}) = {epsilon:.6f}")
++        print(f"Computed ε (threshold) = α^β · exp(-σ·Δτ_min) = {alpha}^{beta} · exp(-{sigma}·{delta_tau_min}) = {epsilon:.6f}")
+@@
+-            print(f"Core Banach condition: {gamma}·(1 + {t}·{c_P}) = {lhs:.6f} ≤ {1-epsilon:.6f} = 1-ε: {'✓' if passed else '✗'}")
++            print(f"Core Banach condition: {gamma}·(1 + {t}·{c_P}) = {lhs:.6f} ≤ ε={epsilon:.6f}: {'✓' if passed else '✗'}")
+@@
+-                print(f"  Step {i}: {gamma_k}·(1 + {t_k}·{c_P})·exp(-{sigma}·{delta_tau_k}) = {lhs:.6f} ≤ {1-epsilon:.6f}: {'✓' if passed else '✗'}")
++                print(f"  Step {i}: {gamma_k}·(1 + {t_k}·{c_P})·exp(-{sigma}·{delta_tau_k}) = {lhs:.6f} ≤ ε={epsilon:.6f}: {'✓' if passed else '✗'}")
