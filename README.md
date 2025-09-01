@@ -26,30 +26,34 @@ pip install -r requirements.txt
 python src/verify_gaps.py examples/core_banach/example_core.json --type core_banach --verified
 python src/verify_gaps.py examples/ledger/example_ledger.json --type ledger --verified
 python src/verify_gaps.py examples/coupled_streams/example_coupled.json --type coupled_stream
+Expected output: all OK.
+
+CLI (abridged)
+bash
+Copy code
 --type {core_banach,ledger,coupled_stream}
 --eps <float>         # override threshold
 --tol <float>         # numeric tolerance
 --verified            # outward rounding guards (numpy.nextafter)
 --interval            # planned: interval arithmetic
 --use-gammaV          # planned: SVD-based ||R @ Gamma||_2
+Repo layout
+bash
+Copy code
 src/verify_gaps.py
 examples/
 .github/workflows/ci.yml
 paper/            # optional
+MIT licensed. See LICENSE.
 
-4) at the bottom, choose **Commit directly to `main`** → **Commit changes**.
+bash
+Copy code
 
-5) go back to the repo home page and refresh. it should render with badges and nice code blocks.  
-   (you can also click **Raw** on README to confirm there are no stray “Copy code” lines.)
-
----
-
-## if you insist on terminal
+### B) if you prefer terminal instead of web
 
 ```bash
 # from repo root
-notepad README.md   # paste the exact block above, save
-
+notepad README.md             # paste the block above, save & close
 git add README.md
-git commit -m "README: clean markdown; proper code fences"
+git commit -m "README: clean markdown; remove stray instructions"
 git push
