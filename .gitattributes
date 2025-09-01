@@ -1,0 +1,12 @@
+# Normalize line endings; keep LF in source files
+* text=auto eol=lf
+
+# Always treat these as text with LF
+*.py  text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md  text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.sh  text eol=lf
